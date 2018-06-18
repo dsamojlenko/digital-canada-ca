@@ -1,0 +1,51 @@
+---
+title: "Blog"
+description: "Blog posts from members of the Canadian Digital Service team, colleagues, and friends working on digital services."
+image: blog.jpg
+lang: en
+layout: cds/page
+permalink: 
+trans_url: '/blogue'
+---
+
+<!--{% assign posts=site.posts | where:"lang",page.lang %}-->
+<!--<div class="container page-blog--container-padding">-->
+	<!-- This loops through the paginated posts -->
+<!-- This loops through the paginated posts -->
+{% for post in paginator.posts %}
+  <h1><a href="{{ post.url }}">{{ post.title }}</a></h1>
+  <p class="author">
+    <span class="date">{{ post.date }}</span>
+  </p>
+  <div class="content">
+    {{ post.content }}
+  </div>
+{% endfor %}
+<!--
+	<ul class="blogpost-list">
+	    {% for post in posts %}
+
+		    <li class="post">
+		    	<div class="date">{{ post.date | date: '%B %-d, %Y' }}</div>
+		    	<div class="row">
+		    		<div class="col-xs-12 col-sm-4">
+						{% if post.image-alt %}
+			    			<div class="photo" role="img" aria-label="{{ post.image-alt }}" style="background-image: url('/assets/img/cds/post-images/{{ post.image }}')"></div>
+						{% else %}
+							<div class="photo" style="background-image: url('/assets/img/cds/post-images/{{ post.image }}')"></div>
+						{% endif %}
+			    	</div>
+			    	<div class="col-xs-12 col-sm-8">
+				    	<div class="text">
+				        	<div class="title"><a href="{{ post.url }}"><h2>{{ post.title }}</h2></a></div>
+				        	<div class="author">By: {{ post.author }}</div>
+				        	<div class="summary">{{ post.excerpt | strip_html | truncatewords:75 }}</div>
+				        	<div class="readmore"><a href="{{ post.url }}" aria-label="Continue reading {{ post.title }}">Read More</a></div>
+				        </div>
+				    </div>
+		        </div>
+		    </li>
+	    {% endfor %}
+	</ul>
+-->
+<!--</div>-->
